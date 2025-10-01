@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function List() {
+            const [text, setText]   = React.useState("");
+            const [items, setItems] = React.useState([]);
+            const inputbtn = React.useRef(null);
+
+            const boxStyle = {
+            width: 350,
+            minHeight: 200,
+            border: "1px solid #d1d5db",
+            borderRadius: 12,
+            backgroundColor: "#fff",
+            marginTop: 16,
+            padding: 16,
+            };
+
+            const rowStyle = { display: "flex", gap: 8, alignItems: "center", marginBottom: 12 };
+
+            const inputStyle = {
+            flex: 1,
+            boxSizing: "border-box",
+            padding: 10,
+            borderRadius: 8,
+            outline: "none"
+            };
+
+            const btnStyle = {
+            backgroundColor: "green",
+            color: "white",
+            cursor: "pointer",
+            padding: "10px 15px",
+            border: "none",
+            borderRadius: 8
+            };
+
+            const listStyle = { listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 8 };
+            const itemStyle = { padding: "8px 10px", border: "1px solid #eee", borderRadius: 8, background: "gray" };
+
+            const add = () => {
+            const t = text.trim();
+            if (!t) {
+                inputbtn.current?.focus();
+                return;
+            }
+
+            setItems((prev) => [t, ...prev]);  // 위로 쌓이게
+            setText("");
+            inputbtn.current?.focus();
+            };
+
+            const onKeyDown = (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                add();
+            }
+            };
+
+            return (
+            <>
+                <h1>TO-DO-LIST</h1>
+
+                <div style={boxStyle}>
+                
+                <div style={rowStyle}>
+                    <input
+                    ref={inputbtn}
+                    type="text"
+                    placeholder="할 일을 입력하세요"
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                    onKeyDown={onKeyDown}
+                    style={inputStyle}
+                    />
+                    <button onClick={add} style={btnStyle}>추가하기</button>
+                </div>
+
+                
+                <ul style={listStyle}>
+                    {items.map((it, idx) => (
+                    <li key={idx} style={itemStyle}>{it}</li>
+                    ))}
+                </ul>
+                </div>
+            </>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<List />);
+</script>
+</body>
+</html>
