@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+    const { useState } = React;
+
+    function InputBox() {
+      const [text, setText] = useState("");
+      const [items, setItems] = useState([]);
+
+
+      const handleChange = (e) => setText(e.target.value);
+
+      const handleAdd = () => {
+            if (text === "") {          
+            alert("문자를 입력하세요");
+            return;
+        }
+            setItems([...items, text]); 
+            setText("");                
+        };
+
+        const handleEnter = (e) => {
+            if (e.key === "Enter") {
+            handleAdd();
+            }
+        };
+
+      return (
+        <div>
+          <input
+            type="text"
+            value={text}
+            onChange={handleChange}
+            onKeyDown={handleEnter}
+            // placeholder="문자를 입력하세요"
+          />
+          <button onClick={handleAdd}>추가</button>
+            <ul>
+            {items.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<InputBox/>);
+    </script>
+</body>
+</html>
