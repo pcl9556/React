@@ -2,14 +2,14 @@
 
 화면을 구성하는 가장 작은 단위.
 function Hello() {
-  return <h1>안녕하세요!</h1>;
+  return <h1 태그>안녕하세요!</h1>;
 }
 
 JSX
 
 자바스크립트 안에서 HTML처럼 작성하는 문법.
 리액트에서 쓰는 JavaScript + XML 문법
-const element = <h1>Hello, React!</h1>;
+const element = <h1 태그>Hello, React!</h1>;
 
 상태(State) & 속성(Props)
 
