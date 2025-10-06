@@ -27,3 +27,12 @@ Props: 부모 → 자식으로 전달하는 값 (수정 불가)
 ReactDOM.createRoot(...).render(<App />)
 
 화면에 컴포넌트를 붙여주는 역할.
+
+<h3>이벤트 처리</h3>
+
+HTML의 onclick, onchange 같은 이벤트를 CamelCase로 사용.
+
+함수(핸들러)를 연결.
+
+<button onClick={() => alert("버튼 클릭!")}>클릭</button>
+
