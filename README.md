@@ -41,3 +41,15 @@ HTML의 onclick, onchange 같은 이벤트를 CamelCase로 사용.
 컴포넌트가 렌더링된 후에 실행할 코드 작성.
 
 API 호출, 타이머 설정 등에 사용.
+
+<h3>React ↔ Spring Boot 연동(CORS) </h3>
+1) 서버(Spring Boot) 설정
+@Configuration으로 한 번만 설정하면 모든 컨트롤러에 적용
+정확한 오리진을 지정
+
+2) 프론트(React)에서 요청 보내기
+3) 컨트롤러 예시(세션 로그인 흐름)
+4) JWT(토큰)
+서버: 로그인 시 Authorization: Bearer <token>을 프론트로 반환
+프론트: 토큰을 localStorage/memory에 보관 후 모든 요청 헤더에 포함
+서버 CORS: exposedHeaders("Authorization")로 브라우저에서 읽을 수 있게
