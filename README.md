@@ -44,10 +44,10 @@ API 호출, 타이머 설정 등에 사용.
 
 <h3>React ↔ Spring Boot 연동(CORS) </h3>
 1) 서버(Spring Boot) 설정
-@Configuration으로 한 번만 설정하면 모든 컨트롤러에 적용
+- @Configuration으로 한 번만 설정하면 모든 컨트롤러에 적용
 정확한 오리진을 지정
 
-2) 프론트(React)에서 요청 보내기
+2) 프론트(React)에서 요청 보내기 - 프론트는 이 값을 읽어서 모든 변경 요청에 X-XSRF-TOKEN 헤더로 보냄
 3) 컨트롤러 예시(세션 로그인 흐름)
 4) JWT(토큰)
 서버: 로그인 시 Authorization: Bearer <token>을 프론트로 반환
