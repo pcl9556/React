@@ -36,3 +36,8 @@ HTML의 onclick, onchange 같은 이벤트를 CamelCase로 사용.
 
 <button onClick={() => alert("버튼 클릭!")}>클릭</button>
 
+<h3>useEffect</h3>
+
+컴포넌트가 렌더링된 후에 실행할 코드 작성.
+
+API 호출, 타이머 설정 등에 사용.
