@@ -47,8 +47,8 @@ API 호출, 타이머 설정 등에 사용.
 - @Configuration으로 한 번만 설정하면 모든 컨트롤러에 적용
 정확한 오리진을 지정
 
-2) 프론트(React)에서 요청 보내기 - 프론트는 이 값을 읽어서 모든 변경 요청에 X-XSRF-TOKEN 헤더로 보냄
-3) 컨트롤러 예시(세션 로그인 흐름)
+2) 프론트(React)에서 요청 보내기 - (fetch/axios) 프론트는 이 값을 읽어서 모든 변경 요청에 X-XSRF-TOKEN 헤더로 보냄
+3) 컨트롤러 (세션 로그인 흐름)
 4) JWT(토큰)
 서버: 로그인 시 Authorization: Bearer <token>을 프론트로 반환
 프론트: 토큰을 localStorage/memory에 보관 후 모든 요청 헤더에 포함
