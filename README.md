@@ -53,3 +53,8 @@ API 호출, 타이머 설정 등에 사용.
 서버: 로그인 시 Authorization: Bearer <token>을 프론트로 반환
 프론트: 토큰을 localStorage/memory에 보관 후 모든 요청 헤더에 포함
 서버 CORS: exposedHeaders("Authorization")로 브라우저에서 읽을 수 있게
+
+<h3> iteration </h3>
+map() - JSX 요소 반복 렌더링
+key - 각 요소 식별을 위한 고유값 (반드시 필요)
+filter(), sort() - 반복 전에 조건이나 정렬 가능
