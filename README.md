@@ -63,4 +63,11 @@ filter(), sort() - 반복 전에 조건이나 정렬 가능
 “비동기 함수”를 선언할 때 사용하는 키워드
 - 항상 Promise를 반환
 - 값을 받으려면 then() 또는 await으로 처리
-- 
+
+await은 반드시 async 함수 안에서만 사용가능
+
+* async/await이 더 직관적임
+
+API 데이터를 가져올 때 (useEffect 내부) async를 사용
+
+비동기 처리 중 오류가 발생할 수 있으므로 try/catch로 감싸주는게 좋음
