@@ -1,13 +1,14 @@
 <h3>컴포넌트(Component)</h3>
 
 화면을 구성하는 가장 작은 단위.
+UI 조각(함수). 입력(props)을 받아 출력(JSX)함
 function Hello() {
   return <h1 태그>안녕하세요!</h1>;
 }
 
 <h3>JSX</h3>
 
-자바스크립트 안에서 HTML처럼 작성하는 문법.
+자바스크립트 안에서 HTML처럼 작성하는 문법.(중괄호 {}로 JS 값 끼워 넣기)
 리액트에서 쓰는 JavaScript + XML 문법
 const element = <h1 태그>Hello, React!</h1>;
 
@@ -27,6 +28,7 @@ Props: 부모 → 자식으로 전달하는 값 (수정 불가)
 ReactDOM.createRoot(...).render(<App />)
 
 화면에 컴포넌트를 붙여주는 역할.
+JSX를 실제 DOM으로 그림 (React가 자동으로)
 
 <h3>이벤트 처리</h3>
 
