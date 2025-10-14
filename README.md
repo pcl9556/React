@@ -65,6 +65,7 @@ filter(), sort() - 반복 전에 조건이나 정렬 가능
 “비동기 함수”를 선언할 때 사용하는 키워드
 - 항상 Promise를 반환
 - 값을 받으려면 then() 또는 await으로 처리
+- 서버 통신 시 async/await + useEffect 조합
 
 await은 반드시 async 함수 안에서만 사용가능
 
