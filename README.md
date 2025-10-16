@@ -74,3 +74,11 @@ await은 반드시 async 함수 안에서만 사용가능
 API 데이터를 가져올 때 (useEffect 내부) async를 사용
 
 비동기 처리 중 오류가 발생할 수 있으므로 try/catch로 감싸주는게 좋음
+
+React - DB연동
+npm i axios 설치
+
+*Fetch와 Axios 사용법 비교
+
+GET, POST와 같은 메소드를 사용할 때, Axios에서는 간단히 점 표기법으로 axios.get(), axios.post() 같은 함수를 사용하면 됨.
+그리고 JSON 형식의 바디를 객체로 가져올 때 Fetch에서는 await 키워드를 사용해야 하지만, Axios에서는 그럴 필요가 없음.
