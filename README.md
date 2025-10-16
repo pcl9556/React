@@ -75,7 +75,8 @@ API 데이터를 가져올 때 (useEffect 내부) async를 사용
 
 비동기 처리 중 오류가 발생할 수 있으므로 try/catch로 감싸주는게 좋음
 
-React - DB연동
+<h3>React - DB연동 </h3>
+
 npm i axios 설치
 
 *Fetch와 Axios 사용법 비교
