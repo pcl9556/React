@@ -83,3 +83,27 @@ npm i axios 설치
 
 GET, POST와 같은 메소드를 사용할 때, Axios에서는 간단히 점 표기법으로 axios.get(), axios.post() 같은 함수를 사용하면 됨.
 그리고 JSON 형식의 바디를 객체로 가져올 때 Fetch에서는 await 키워드를 사용해야 하지만, Axios에서는 그럴 필요가 없음.
+
+<h3> Spring Boot + React + MySQL 연결 </h3>
+
+프론트엔드 → DB 직접 연결은 불가능
+1) 보안 문제, 2) CORS, 네트워크 구조, 3) 역할 분리 (SRP: 단일 책임 원칙)
+
+백엔드(Sprint Boot) 가 “중간 서버” 역할
+
+1) API 제공 (REST API)
+2) 비즈니스 로직 처리
+3) DB(MySQL) 연동
+4) JSON 형태로 응답 반환
+
+MySQL은 데이터만 저장하는 순수 저장소(Storage) 역할
+
+-테이블에 데이터를 행(Row)으로 저장
+
+-SQL을 이용해 데이터 조작 (CRUD)
+
+-인덱스, 제약조건(FK, UNIQUE)으로 데이터 무결성 유지
+
+-Spring Boot가 JDBC 드라이버로 연결
+
+React는 순수 클라이언트(브라우저에서 실행)
