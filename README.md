@@ -107,3 +107,28 @@ MySQL은 데이터만 저장하는 순수 저장소(Storage) 역할
 -Spring Boot가 JDBC 드라이버로 연결
 
 React는 순수 클라이언트(브라우저에서 실행)
+
+-사용자 입력 받기
+-API 호출 (axios, fetch)
+-받은 JSON 데이터 화면에 렌더링
+-상태(state) 관리
+
+<h3> 데이터 흐름 </h3>
+[사용자 입력]
+         ↓
+React (axios.post)
+         ↓
+POST /api/members (Spring Boot)
+         ↓
+Service → MyBatis → DB INSERT
+         ↓
+성공한 데이터 JSON으로 반환
+         ↓
+React 화면 업데이트
+
+<h3> 3계층 아키텍처 + 클라이언트/서버 </h3>
+[React]          ← 프레젠테이션 계층(클라이언트)
+   ↓
+[Spring Boot]    ← 비즈니스 계층 + 데이터 접근 계층
+   ↓
+[MySQL]          ← 데이터 저장 계층
